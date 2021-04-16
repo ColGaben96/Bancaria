@@ -15,7 +15,25 @@
     </nav>
 </header>
 <body>
-   
+<br/>
+<div class="container">
+    <h1>Agencias Registradas</h1>
+    <div class="container-fluid" th:if="${agencias != null and !agencias.empty}">
+        <table class="table table-bordered table-hover">
+            <tr class="table-light">
+                <th>Nombre de la Sucursal</th>
+                <th>Dirección de la Sucursal</th>
+            </tr>
+            <tr th:each="agencia : ${agencias}">
+                <td th:text="${agencia.nombre_punto}">Nombre Punto</td>
+                <td th:text="${agencia.direccion}">Direccion</td>
+            </tr>
+        </table>
+    </div>
+    <div class="container-fluid" th:if="${agencias == null or agencias.empty}">
+        <p>No hay registros</p>
+    </div>
+</div>
 </body>
 <footer class="fixed-bottom">
     <p style="text-align: center">© 2021 - Universidad El Bosque - Gabriel Blanco; Juan Pablo Araque</p>

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @Slf4j
-public class Incio {
+public class BancariaController {
     @Autowired
     private AgenciaDAO agencia;
     @GetMapping("/")
