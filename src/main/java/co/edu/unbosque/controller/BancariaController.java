@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BancariaController {
     @Autowired
     private AgenciaDAO agencia;
-    @GetMapping("/CRM")
+    @GetMapping("/")
     public String downloadAgencies(Model model) {
         log.info("Iniciando REST");
         var agencias = agencia.findAll();
