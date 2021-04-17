@@ -12,18 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BancariaController {
     @Autowired
     private AgenciaService agencia;
-    @GetMapping("/")
+    @GetMapping("/agenciesManager")
     public String downloadAgencies(Model model) {
         var agencias = agencia.listAgencias();
         log.info("Agencias: "+agencias.size());
         model.addAttribute("agencias", agencias);
         return "index";
-    }
-
-    @GetMapping("/agenciesManager")
-    public String getAgenciesList(Model model) {
-        var agencias = agencia.listAgencias();
-        model.addAttribute("agencias", agencias);
-        return "agenciesManager";
     }
 }
