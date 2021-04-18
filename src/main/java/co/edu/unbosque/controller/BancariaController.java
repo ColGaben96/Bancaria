@@ -1,6 +1,10 @@
 package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.persistence.AgenciaDTO;
+import co.edu.unbosque.model.persistence.EmpleadoDTO;
+import co.edu.unbosque.model.service.EmpleadoService;
+import co.edu.unbosque.model.service.PrestamoService;
+import co.edu.unbosque.model.service.TituloAcademicoService;
 import lombok.extern.slf4j.Slf4j;
 import co.edu.unbosque.model.service.AgenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +23,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class BancariaController {
     @Autowired
     private AgenciaService agencia;
+    @Autowired
+    private EmpleadoService empleado;
+    @Autowired
+    private PrestamoService prestamo;
+    @Autowired
+    private TituloAcademicoService titulo;
 
     /**
      * @author Gabriel Blanco
@@ -68,5 +78,31 @@ public class BancariaController {
         var agencias = agencia.listAgencias();
         model.addAttribute("agencias", agencias);
         return "agenciesManager";
+    }
+
+    /**
+     * @author Gabriel Blanco
+     * Method to download agencies and create a new employee
+     * @param empleado
+     * @param model
+     * @return
+     */
+    @GetMapping("/newEmployee")
+    public String addEmployee(EmpleadoDTO empleado, Model model) {
+        var agencias = agencia.listAgencias();
+        model.addAttribute("agencias", agencias);
+        return "newEmployee";
+    }
+
+    /**
+     * @author Gabriel Blanco
+     * Method to save an employee in db
+     * @param empleado
+     * @return
+     */
+    @PostMapping("/saveEmployee")
+    public String saveEmployee(EmpleadoDTO empleado) {
+        this.empleado.save(empleado);
+        return "redirect:/";
     }
 }

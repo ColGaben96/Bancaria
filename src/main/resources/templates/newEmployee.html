@@ -15,7 +15,54 @@
     </nav>
 </header>
 <body>
-
+<div class="container">
+    <div th:if="${agencias != null and !agencias.empty}">
+        <form th:action="@{/saveEmployee}" th:method="post" th:object="${empleado}">
+            <div class="form-group">
+                <label for="numID">Identificación</label>
+                <input id="numID" name="numID" type="text" class="form-control" placeholder="Ej. CC1075680601">
+            </div>
+            <div class="form-group">
+                <label for="nombres">Nombres</label>
+                <input id="nombres" name="nombres" type="text" class="form-control" placeholder="Ej. Gabriel Ernesto">
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos</label>
+                <input id="apellidos" name="apellidos" type="text" class="form-control" placeholder="Ej. Blanco La Rotta">
+            </div>
+            <div class="form-group">
+                <label for="ciudad_residencia">Ciudad de Residencia</label>
+                <input id="ciudad_residencia" name="ciudad_residencia" type="text" class="form-control" placeholder="Ej. Bogotá D.C">
+            </div>
+            <div class="form-group">
+                <label for="cargo">Cargo</label>
+                <input id="cargo" name="cargo" type="text" class="form-control" placeholder="Ej. Ingeniero de Operaciones">
+            </div>
+            <div class="form-group">
+                <label for="salario">Salario</label>
+                <input id="salario" name="salario" type="number" class="form-control" placeholder="Ej. 2500000">
+            </div>
+            <div class="form-group">
+                <label for="tipo_contrato">Tipo de Contrato</label>
+                <input id="tipo_contrato" name="tipo_contrato" type="number" class="form-control" placeholder="Ej. 0 = término fijo, 1 = término indefinido, 2 = prestación de servicios">
+            </div>
+            <div class="form-group">
+                <label for="cod_empleado">Código de Empleado</label>
+                <input id="cod_empleado" name="cod_empleado" type="number" class="form-control" placeholder="Ej. 18420218601">
+            </div>
+            <div class="form-group">
+                <label for="sucursal_adscrita">Sucursal Adscrita</label>
+                <select id="sucursal_adscrita" class="form-select" name="sucursal_adscrita">
+                    <option th:each="agencia: ${agencias}" th:value="${agencia.getId()}" th:text="${agencia.getNombre_punto()}">Ver nombre</option>
+                </select>
+            </div>
+            <input id="submit" type="submit" class="btn btn-primary" value="Agregar Empleado">
+        </form>
+    </div>
+    <div th:if="${agencias == null or agencias.empty}">
+        <p>En este momento no puedes crear un nuevo empleado porque no hay agencias disponibles.</p>
+    </div>
+</div>
 </body>
 <footer class="fixed-bottom">
     <p style="text-align: center">© 2021 - Universidad El Bosque - Gabriel Blanco; Juan Pablo Araque</p>

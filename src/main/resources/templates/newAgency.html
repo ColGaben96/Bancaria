@@ -16,14 +16,14 @@
 </header>
 <body>
 <div class="container">
-    <form th:action="@{/saveAgency}" method="post" th:object="${agencia}">
+    <form th:action="@{/saveAgency}" th:method="post" th:object="${agencia}">
         <div class="form-group">
             <label for="nombre_punto">Sucursal</label>
-            <input name="nombre_punto" type="text" class="form-control" placeholder="Ej. Caobos Salazar">
+            <input id="nombre_punto" name="nombre_punto" type="text" class="form-control" placeholder="Ej. Caobos Salazar">
         </div>
         <div class="form-group">
             <label for="direccion">Dirección</label>
-            <input name="direccion" type="text" class="form-control" placeholder="Ej. Carrera 14 # 149-26 Local 2202">
+            <input id="direccion" name="direccion" type="text" class="form-control" placeholder="Ej. Carrera 14 # 149-26 Local 2202">
         </div>
         <input id="submit" type="submit" class="btn btn-primary" value="Agregar Agencia">
     </form>
