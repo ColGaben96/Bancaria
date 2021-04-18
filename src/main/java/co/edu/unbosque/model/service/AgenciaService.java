@@ -5,8 +5,8 @@ import co.edu.unbosque.model.persistence.AgenciaDTO;
 import java.util.List;
 
 public interface AgenciaService {
-    public List<AgenciaDTO> listAgencias();
-    public void save(AgenciaDTO agencia);
-    public void delete(AgenciaDTO agencia);
-    public AgenciaDTO findAgencia(AgenciaDTO agencia);
+    List<AgenciaDTO> listAgencias();
+    void save(AgenciaDTO agencia);
+    void delete(AgenciaDTO agencia);
+    AgenciaDTO findAgencia(AgenciaDTO agencia);
 }
