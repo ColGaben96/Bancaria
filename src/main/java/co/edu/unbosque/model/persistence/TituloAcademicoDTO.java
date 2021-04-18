@@ -2,10 +2,19 @@ package co.edu.unbosque.model.persistence;
 
 import lombok.Data;
 
+import javax.persistence.*;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Date;
 
+@Entity
 @Data
-public class TituloAcademicoDTO {
+@Table(name="tituloacademico")
+public class TituloAcademicoDTO implements Serializable {
+    @Serial
+    private static final long serialVersionUID=416202104L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String tipo_titulo;
     private String nombre_titulo;

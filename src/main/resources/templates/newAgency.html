@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Bancaria</title>
@@ -15,7 +15,19 @@
     </nav>
 </header>
 <body>
-
+<div class="container">
+    <form th:action="@{/saveAgency}" method="post" th:object="${agencia}">
+        <div class="form-group">
+            <label for="nombre_punto">Sucursal</label>
+            <input name="nombre_punto" type="text" class="form-control" placeholder="Ej. Caobos Salazar">
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input name="direccion" type="text" class="form-control" placeholder="Ej. Carrera 14 # 149-26 Local 2202">
+        </div>
+        <input id="submit" type="submit" class="btn btn-primary" value="Agregar Agencia">
+    </form>
+</div>
 </body>
 <footer class="fixed-bottom">
     <p style="text-align: center">© 2021 - Universidad El Bosque - Gabriel Blanco; Juan Pablo Araque</p>

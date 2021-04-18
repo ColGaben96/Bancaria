@@ -1,4 +1,4 @@
-package co.edu.unbosque.service;
+package co.edu.unbosque.model.service;
 
 import co.edu.unbosque.model.persistence.AgenciaDTO;
 

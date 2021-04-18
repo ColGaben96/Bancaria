@@ -1,11 +1,9 @@
-package co.edu.unbosque.controller;
+package co.edu.unbosque;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"co.edu.unbosque.model"})
 public class BancariaApplication {
 
     public static void main(String[] args) {

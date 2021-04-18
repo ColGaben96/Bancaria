@@ -23,9 +23,6 @@ public class EmpleadoDTO implements Serializable {
     private double salario;
     private int tipo_contrato;
     private int cod_empleado;
-    @JoinColumn(updatable = false, nullable = false, foreignKey = @ForeignKey(name = "BelongsAgencia_FK"))
-    @ManyToOne(optional = false, cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
-    private AgenciaDTO BelongsAgencia_FK;
 
     public int getId() {
         return id;
@@ -97,14 +94,6 @@ public class EmpleadoDTO implements Serializable {
 
     public void setCod_empleado(int cod_empleado) {
         this.cod_empleado = cod_empleado;
-    }
-
-    public AgenciaDTO getBelongsAgencia_FK() {
-        return BelongsAgencia_FK;
-    }
-
-    public void setBelongsAgencia_FK(AgenciaDTO belongsAgencia_FK) {
-        BelongsAgencia_FK = belongsAgencia_FK;
     }
 }
 

@@ -2,8 +2,18 @@ package co.edu.unbosque.model.persistence;
 
 import lombok.Data;
 
+import javax.persistence.*;
+import java.io.Serial;
+import java.io.Serializable;
+
+@Entity
 @Data
-public class PrestamoDTO {
+@Table(name="prestamo")
+public class PrestamoDTO implements Serializable {
+    @Serial
+    private static final long serialVersionUID=416202103L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int num_prestamo;
     private double valor;
