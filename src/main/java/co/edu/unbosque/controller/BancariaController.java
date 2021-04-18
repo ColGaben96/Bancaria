@@ -39,8 +39,10 @@ public class BancariaController {
     @GetMapping ("/")
     public String downloadWholeData(Model model) {
         var agencias = agencia.listAgencias();
+        var empleados = empleado.listEmpleados();
         log.info("Agencias: "+agencias.size());
         model.addAttribute("agencias", agencias);
+        model.addAttribute("empleados", empleados);
         return "index";
     }
 

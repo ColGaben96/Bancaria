@@ -27,6 +27,33 @@
                <p>Por el momento no hay agencias disponibles. Intente mas tarde</p>
            </div>
        </form>
+       <div class="container" th:if="${empleados != null and !empleados.empty}">
+           <table class="table table-bordered table-hover">
+           <tr class="table-light">
+               <th>Identificación</th>
+               <th>Nombres</th>
+               <th>Apellidos</th>
+               <th>Ciudad de Residencia</th>
+               <th>Cargo</th>
+               <th>Salario</th>
+               <th>Tipo de Contrato</th>
+               <th>Código de Empleado</th>
+           </tr>
+           <tr th:each="empleado : ${empleados}">
+               <td th:text="${empleado.getNumID()}">TipoID</td>
+               <td th:text="${empleado.getNombres()}">Nombres</td>
+               <td th:text="${empleado.getApellidos()}">Apellidos</td>
+               <td th:text="${empleado.getCiudad_residencia}">Ciudad_Residencia</td>
+               <td th:text="${empleado.getCargo()}">Cargo</td>
+               <td th:text="${empleado.getSalario()}">Salario</td>
+               <td th:text="${empleado.getTipo_contrato()}">Tipo_Contrato</td>
+               <td th:text="${empleado.getCod_empleado()}">Codigo_Empleado</td>
+           </tr>
+           </table>
+       </div>
+       <div class="container" th:if="${empleados == null or empleados.empty}">
+            <p>No hay empleados registrados en esta sucursal</p>
+       </div>
    </div>
 </body>
 <footer class="fixed-bottom">
