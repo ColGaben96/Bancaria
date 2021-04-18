@@ -6,6 +6,11 @@ import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 
+/**
+ * @author Gabriel Blanco
+ * @version 1.0
+ * DTO Class for loans. This class is meant to work with the database. Also this will be the master class for this table as it is specified.
+ */
 @Entity
 @Data
 @Table(name="prestamo")

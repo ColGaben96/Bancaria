@@ -3,10 +3,17 @@ package co.edu.unbosque.model.service;
 import co.edu.unbosque.model.PrestamoDAO;
 import co.edu.unbosque.model.persistence.PrestamoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * @author Gabriel Blanco
+ * @version 1.0
+ * Implementation of PrestamoService. Here is where magic literally happens.
+ */
+@Service
 public class PrestamoImpl implements PrestamoService {
 
     @Autowired

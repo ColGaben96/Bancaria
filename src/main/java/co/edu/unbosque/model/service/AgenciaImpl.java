@@ -8,6 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * @author Gabriel Blanco
+ * @version 1.0
+ * Implementation of AgenciaService. Here is where magic literally happens.
+ */
 @Service
 public class AgenciaImpl implements AgenciaService {
 

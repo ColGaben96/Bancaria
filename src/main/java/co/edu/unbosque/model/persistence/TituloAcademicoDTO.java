@@ -7,6 +7,11 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * @author Gabriel Blanco
+ * @version 1.0
+ * DTO Class for academic titles. This class is meant to work with the database. Also this will be the master class for this table as it is specified.
+ */
 @Entity
 @Data
 @Table(name="tituloacademico")
