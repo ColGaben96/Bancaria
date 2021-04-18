@@ -1,8 +1,8 @@
 package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.persistence.AgenciaDTO;
-import co.edu.unbosque.model.service.AgenciaService;
 import lombok.extern.slf4j.Slf4j;
+import co.edu.unbosque.model.service.AgenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,5 +31,12 @@ public class BancariaController {
     public String saveAgency(AgenciaDTO agencia) {
         this.agencia.save(agencia);
         return "redirect:/";
+    }
+
+    @GetMapping("/agenciesManager")
+    public String getAllAgencies(Model model) {
+        var agencias = agencia.listAgencias();
+        model.addAttribute("agencias", agencias);
+        return "agenciesManager";
     }
 }

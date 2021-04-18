@@ -25,8 +25,8 @@
                 <th>Dirección de la Sucursal</th>
             </tr>
             <tr th:each="agencia : ${agencias}">
-                <td th:text="${agencia.nombre_punto}">Nombre Punto</td>
-                <td th:text="${agencia.direccion}">Direccion</td>
+                <td th:text="${agencia.getNombre_punto()}">Nombre Punto</td>
+                <td th:text="${agencia.getDireccion()}">Direccion</td>
             </tr>
         </table>
     </div>
