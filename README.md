@@ -26,7 +26,7 @@ Proceed to install a Java IDE in th case you don't have one</pre>
 If you already have these steps clear, then you may proceed like this: <br>
 ### Building the schema
 Find in this project and download the file <pre>database_build > bancaria_build_schema.sql</pre>
-Go to MySQL Workbench and import the file. The DBA will create the schema and tables for you. <br>
+Go to MySQL Workbench and import the file. The DBA will insert some static values that are needed. Please import this file every time the project is run
 ### Cloning the project
 Go to your IDE once you have cloned the project. Or if you have an IDE like IntelliJ Idea, you may create a new project from version control and paste this URL when the IDE ask you for.
 ### Run the project
