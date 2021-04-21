@@ -25,20 +25,6 @@ public class TipoTituloAcademicoDTO implements Serializable {
     private int id;
     private String nombre_tipotitulo;
 
-    public TipoTituloAcademicoDTO() {
-        build(0, "Pregrado");
-        build(1, "Posgrado");
-        build(2, "Maestría");
-        build(3, "Doctorado");
-        build(4, "Técnico");
-    }
-    @Modifying
-    @Query(value = "INSERT INTO tipotituloacademico VALUES (id, nombre_tipotitulo) (?1, ?2)", nativeQuery = true)
-    @Transactional
-    public void build(int id, String nombre_tipotitulo) {
-
-    }
-
     public int getId() {
         return id;
     }

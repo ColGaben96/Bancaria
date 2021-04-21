@@ -26,19 +26,6 @@ public class TipoContratoDTO implements Serializable {
     private int id;
     private String nombre_tipo;
 
-    public TipoContratoDTO() {
-        build(0, "Término Indefinido");
-        build(1, "Término Fijo");
-        build(2, "Prestación de Servicios");
-    }
-
-    @Modifying
-    @Query(value = "INSERT INTO tipocategorialaboral VALUES (id, nombre_tipo) (?1, ?2)", nativeQuery = true)
-    @Transactional
-    public void build(int id, String nombre_tipotitulo) {
-
-    }
-
     public int getId() {
         return id;
     }
