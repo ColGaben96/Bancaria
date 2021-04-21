@@ -24,10 +24,18 @@ public class EmpleadoDTO implements Serializable {
     private String nombres;
     private String apellidos;
     private String ciudad_residencia;
-    private String cargo;
-    private double salario;
-    private int tipo_contrato;
-    private int cod_empleado;
+    private int role;
+    private String cod_empleado;
+    private String contrasena;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "tipo_contrato_FK", nullable = false, updatable = false, insertable = false)
+    private ContratoDTO tipo_contrato;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "agencia_asignada_FK", nullable = false, updatable = false, insertable = false)
+    private AgenciaDTO agencia_asignada;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "afiliado_sindicato_FK", nullable = false, updatable = false, insertable = false)
+    private SindicatoDTO afiliado_sindicato;
 
     public int getId() {
         return id;
@@ -69,36 +77,52 @@ public class EmpleadoDTO implements Serializable {
         this.ciudad_residencia = ciudad_residencia;
     }
 
-    public String getCargo() {
-        return cargo;
+    public int getRole() {
+        return role;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setRole(int role) {
+        this.role = role;
     }
 
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-
-    public int getTipo_contrato() {
-        return tipo_contrato;
-    }
-
-    public void setTipo_contrato(int tipo_contrato) {
-        this.tipo_contrato = tipo_contrato;
-    }
-
-    public int getCod_empleado() {
+    public String getCod_empleado() {
         return cod_empleado;
     }
 
-    public void setCod_empleado(int cod_empleado) {
+    public void setCod_empleado(String cod_empleado) {
         this.cod_empleado = cod_empleado;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public ContratoDTO getTipo_contrato() {
+        return tipo_contrato;
+    }
+
+    public void setTipo_contrato(ContratoDTO tipo_contrato) {
+        this.tipo_contrato = tipo_contrato;
+    }
+
+    public AgenciaDTO getAgencia_asignada() {
+        return agencia_asignada;
+    }
+
+    public void setAgencia_asignada(AgenciaDTO agencia_asignada) {
+        this.agencia_asignada = agencia_asignada;
+    }
+
+    public SindicatoDTO getAfiliado_sindicato() {
+        return afiliado_sindicato;
+    }
+
+    public void setAfiliado_sindicato(SindicatoDTO afiliado_sindicato) {
+        this.afiliado_sindicato = afiliado_sindicato;
     }
 }
 

@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * @author Gabriel Blanco
@@ -21,9 +22,14 @@ public class TituloAcademicoDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String tipo_titulo;
     private String nombre_titulo;
     private Date fecha_expedicion;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "tipo_titulo_FK", nullable = false, updatable = false, insertable = false)
+    private TipoTituloAcademicoDTO tipo_titulo;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "empleado_titular_FK", nullable = false, updatable = false, insertable = false)
+    private EmpleadoDTO empleado_titular;
 
     public int getId() {
         return id;
@@ -31,14 +37,6 @@ public class TituloAcademicoDTO implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getTipo_titulo() {
-        return tipo_titulo;
-    }
-
-    public void setTipo_titulo(String tipo_titulo) {
-        this.tipo_titulo = tipo_titulo;
     }
 
     public String getNombre_titulo() {

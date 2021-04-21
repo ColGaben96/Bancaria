@@ -22,6 +22,9 @@ public class PrestamoDTO implements Serializable {
     private int id;
     private int num_prestamo;
     private double valor;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "empleado_responsable_FK", nullable = false, updatable = false, insertable = false)
+    private EmpleadoDTO empleado_responsable;
 
     public int getId() {
         return id;
@@ -45,5 +48,13 @@ public class PrestamoDTO implements Serializable {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public EmpleadoDTO getEmpleado_responsable() {
+        return empleado_responsable;
+    }
+
+    public void setEmpleado_responsable(EmpleadoDTO empleado_responsable) {
+        this.empleado_responsable = empleado_responsable;
     }
 }
