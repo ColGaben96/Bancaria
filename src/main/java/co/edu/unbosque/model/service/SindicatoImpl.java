@@ -39,6 +39,6 @@ public class SindicatoImpl implements SindicatoService {
     @Override
     @Transactional(readOnly = true)
     public SindicatoDTO findSindicato(SindicatoDTO sindicato) {
-        return this.sindicato.findById(sindicato.getId()).orElse(null);
+        return this.sindicato.findById(sindicato.getIdSindicato()).orElse(null);
     }
 }

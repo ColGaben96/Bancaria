@@ -20,7 +20,7 @@
            <div th:if="${agencias != null and !agencias.empty}">
                <label for="agenciesList">Buscar empleados por la agencia: </label>
                <select class="form-select" name="agenciesList" id="agenciesList">
-                   <option th:each="agencia: ${agencias}" th:value="${agencia.getId()}" th:text="${agencia.getNombre_punto()}">Ver nombre</option>
+                   <option th:each="agencia: ${agencias}" th:value="${agencia.getIdAgencia()}" th:text="${agencia.getNombre_punto()}">Ver nombre</option>
                </select>
            </div>
            <div th:if="${agencias == null or agencias.empty}">

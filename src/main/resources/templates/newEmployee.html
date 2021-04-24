@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <label for="tipo_contrato">Vacante</label>
                     <select id="tipo_contrato" name="tipo_contrato" type="text" class="form-select">
-                        <option></option>
+                        <option th:each="vacante: ${vacantes}" th:value="${vacante.getIdContrato()}" th:text="${vacante.getNombre_puesto()}">Ver Vacante</option>
                     </select>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label for="sucursal_adscrita">Sucursal Adscrita</label>
                 <select id="sucursal_adscrita" class="form-select" name="sucursal_adscrita">
-                    <option th:each="agencia: ${agencias}" th:value="${agencia.getId()}" th:text="${agencia.getNombre_punto()}">Ver nombre</option>
+                    <option th:each="agencia: ${agencias}" th:value="${agencia.getIdAgencia()}" th:text="${agencia.getNombre_punto()}">Ver nombre</option>
                 </select>
             </div>
             <input id="submit" type="submit" class="btn btn-primary" value="Agregar Empleado">
