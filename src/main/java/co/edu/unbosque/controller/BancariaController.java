@@ -2,11 +2,8 @@ package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.persistence.AgenciaDTO;
 import co.edu.unbosque.model.persistence.EmpleadoDTO;
-import co.edu.unbosque.model.service.EmpleadoService;
-import co.edu.unbosque.model.service.PrestamoService;
-import co.edu.unbosque.model.service.TituloAcademicoService;
+import co.edu.unbosque.model.service.*;
 import lombok.extern.slf4j.Slf4j;
-import co.edu.unbosque.model.service.AgenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +26,10 @@ public class BancariaController {
     private PrestamoService prestamo;
     @Autowired
     private TituloAcademicoService titulo;
+    @Autowired
+    private ContratoService contrato;
+    @Autowired
+    private SindicatoService sindicato;
 
     /**
      * @author Gabriel Blanco
@@ -92,6 +93,8 @@ public class BancariaController {
     @GetMapping("/newEmployee")
     public String addEmployee(EmpleadoDTO empleado, Model model) {
         var agencias = agencia.listAgencias();
+        var vacantes = contrato.listContratos();
+        model.addAttribute("vacantes", vacantes);
         model.addAttribute("agencias", agencias);
         return "newEmployee";
     }
