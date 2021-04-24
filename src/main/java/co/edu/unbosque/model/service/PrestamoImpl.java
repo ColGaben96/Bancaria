@@ -40,6 +40,6 @@ public class PrestamoImpl implements PrestamoService {
     @Override
     @Transactional(readOnly = true)
     public PrestamoDTO findPrestamo(PrestamoDTO prestamo) {
-        return this.prestamo.findById(prestamo.getId()).orElse(null);
+        return this.prestamo.findById(prestamo.getIdPrestamo()).orElse(null);
     }
 }

@@ -19,19 +19,19 @@ public class PrestamoDTO implements Serializable {
     private static final long serialVersionUID=416202103L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idPrestamo;
     private int num_prestamo;
     private double valor;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "empleado_responsable_FK", nullable = false, updatable = false, insertable = false)
     private EmpleadoDTO empleado_responsable;
 
-    public int getId() {
-        return id;
+    public int getIdPrestamo() {
+        return idPrestamo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdPrestamo(int id) {
+        this.idPrestamo = id;
     }
 
     public int getNum_prestamo() {

@@ -1,9 +1,6 @@
 package co.edu.unbosque.model.persistence;
 
 import lombok.Data;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.io.Serial;
@@ -22,15 +19,15 @@ public class TipoTituloAcademicoDTO implements Serializable {
     private static final long serialVersionUID = 420202101L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idTipoTitulo;
     private String nombre_tipotitulo;
 
-    public int getId() {
-        return id;
+    public int getIdTipoTitulo() {
+        return idTipoTitulo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdTipoTitulo(int id) {
+        this.idTipoTitulo = id;
     }
 
     public String getNombre_tipotitulo() {

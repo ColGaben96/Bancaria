@@ -38,6 +38,6 @@ public class ContratoImpl implements ContratoService {
     @Override
     @Transactional(readOnly = true)
     public ContratoDTO findContrato(ContratoDTO contrato) {
-        return this.contrato.findById(contrato.getId()).orElse(null);
+        return this.contrato.findById(contrato.getIdContrato()).orElse(null);
     }
 }

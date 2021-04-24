@@ -40,6 +40,6 @@ public class AgenciaImpl implements AgenciaService {
     @Override
     @Transactional(readOnly = true)
     public AgenciaDTO findAgencia(AgenciaDTO agencia) {
-        return this.agencia.findById(agencia.getId()).orElse(null);
+        return this.agencia.findById(agencia.getIdAgencia()).orElse(null);
     }
 }

@@ -1,6 +1,7 @@
 package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.persistence.AgenciaDTO;
+import co.edu.unbosque.model.persistence.ContratoDTO;
 import co.edu.unbosque.model.persistence.EmpleadoDTO;
 import co.edu.unbosque.model.service.*;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +31,8 @@ public class BancariaController {
     private ContratoService contrato;
     @Autowired
     private SindicatoService sindicato;
-
+    @Autowired
+    private TipoContratoService tipo_contrato;
     /**
      * @author Gabriel Blanco
      * Method to download the employees data according to the agencies. This will show on the main page.
@@ -108,6 +110,19 @@ public class BancariaController {
     @PostMapping("/saveEmployee")
     public String saveEmployee(EmpleadoDTO empleado) {
         this.empleado.save(empleado);
+        return "redirect:/";
+    }
+
+    @GetMapping("/newVacant")
+    public String newVacant(ContratoDTO contrato, Model model) {
+        var tipos_contrato = tipo_contrato.listTipoContrato();
+        model.addAttribute("tipos_contrato", tipos_contrato);
+        return "newVacant";
+    }
+
+    @PostMapping("/saveContract")
+    public String saveVacant(ContratoDTO contrato) {
+        this.contrato.save(contrato);
         return "redirect:/";
     }
 }

@@ -19,16 +19,16 @@ public class SindicatoDTO implements Serializable {
     private static final long serialVersionUID = 4202021014L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idSindicato;
     private int numero_afiliacion;
     private double valor_cuota;
 
-    public int getId() {
-        return id;
+    public int getIdSindicato() {
+        return idSindicato;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdSindicato(int id) {
+        this.idSindicato = id;
     }
 
     public int getNumero_afiliacion() {

@@ -38,6 +38,6 @@ public class TituloAcademicoImpl implements TituloAcademicoService {
     @Override
     @Transactional(readOnly = true)
     public TituloAcademicoDTO findTituloAcademico(TituloAcademicoDTO titulo) {
-        return this.titulo.findById(titulo.getId()).orElse(null);
+        return this.titulo.findById(titulo.getIdTituloAcademico()).orElse(null);
     }
 }

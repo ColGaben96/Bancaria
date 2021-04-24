@@ -19,7 +19,7 @@ public class EmpleadoDTO implements Serializable {
     private static final long serialVersionUID=416202102L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idEmpleado;
     private String numID;
     private String nombres;
     private String apellidos;
@@ -28,21 +28,21 @@ public class EmpleadoDTO implements Serializable {
     private String cod_empleado;
     private String contrasena;
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "tipo_contrato_FK", nullable = false, updatable = false, insertable = false)
-    private ContratoDTO tipo_contrato;
+    @JoinColumn(name = "id", nullable = false, updatable = false, insertable = false)
+    private ContratoDTO tipo_contrato_FK;
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "agencia_asignada_FK", nullable = false, updatable = false, insertable = false)
-    private AgenciaDTO agencia_asignada;
+    @JoinColumn(name = "id", nullable = false, updatable = false, insertable = false)
+    private AgenciaDTO agencia_asignada_FK;
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "afiliado_sindicato_FK", nullable = false, updatable = false, insertable = false)
-    private SindicatoDTO afiliado_sindicato;
+    @JoinColumn(name = "id", nullable = false, updatable = false, insertable = false)
+    private SindicatoDTO afiliado_sindicato_FK;
 
-    public int getId() {
-        return id;
+    public int getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdEmpleado(int id) {
+        this.idEmpleado = id;
     }
 
     public String getNumID() {
@@ -102,27 +102,27 @@ public class EmpleadoDTO implements Serializable {
     }
 
     public ContratoDTO getTipo_contrato() {
-        return tipo_contrato;
+        return tipo_contrato_FK;
     }
 
     public void setTipo_contrato(ContratoDTO tipo_contrato) {
-        this.tipo_contrato = tipo_contrato;
+        this.tipo_contrato_FK = tipo_contrato;
     }
 
     public AgenciaDTO getAgencia_asignada() {
-        return agencia_asignada;
+        return agencia_asignada_FK;
     }
 
     public void setAgencia_asignada(AgenciaDTO agencia_asignada) {
-        this.agencia_asignada = agencia_asignada;
+        this.agencia_asignada_FK = agencia_asignada;
     }
 
     public SindicatoDTO getAfiliado_sindicato() {
-        return afiliado_sindicato;
+        return afiliado_sindicato_FK;
     }
 
     public void setAfiliado_sindicato(SindicatoDTO afiliado_sindicato) {
-        this.afiliado_sindicato = afiliado_sindicato;
+        this.afiliado_sindicato_FK = afiliado_sindicato;
     }
 }
 

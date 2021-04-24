@@ -19,8 +19,26 @@
         <h1 style="text-align: center">Registrar Vacantes</h1>
         <div class="container">
             <form th:action="@{/saveContract}" th:method="post" th:object="${contrato}">
-                <div class="form-control">
-                    <select
+                <div class="form-group">
+                    <label for="tipo_contrato_fk">Tipo de Contrato</label>
+                    <select id="tipo_contrato_fk" name="tipo_contrato_fk" type="text" class="form-select">
+                        <option th:each="tipo_contrato: ${tipos_contrato}" th:value="${tipo_contrato.getIdTipoContrato()}" th:text="${tipo_contrato.getNombre_tipo()}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nombre_puesto">Nombre de la Vacante</label>
+                    <input id="nombre_puesto" name="nombre_puesto" type="text" class="form-control" placeholder="Ej. Ingeniero de Operaciones">
+                </div>
+                <div class="form-group">
+                    <label for="sueldo">Salario</label>
+                    <input id="sueldo" name="sueldo" type="text" placeholder="2500000 sin $" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="valor_hora_extra">Hora Extra</label>
+                    <input id="valor_hora_extra" name="valor_hora_extra" type="text" placeholder="500000 sin $" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input id="submit" type="submit" class="btn btn-primary" value="Agregar Vacante">
                 </div>
             </form>
         </div>

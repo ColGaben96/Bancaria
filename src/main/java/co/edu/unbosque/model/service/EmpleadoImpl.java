@@ -39,6 +39,6 @@ public class EmpleadoImpl implements EmpleadoService {
     @Override
     @Transactional(readOnly = true)
     public EmpleadoDTO findEmpleado(EmpleadoDTO empleado) {
-        return this.empleado.findById(empleado.getId()).orElse(null);
+        return this.empleado.findById(empleado.getIdEmpleado()).orElse(null);
     }
 }

@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * @author Gabriel Blanco
@@ -21,16 +20,16 @@ public class AgenciaDTO implements Serializable {
     private static final long serialVersionUID = 41520210101L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idAgencia;
     private String nombre_punto;
     private String direccion;
 
-    public int getId() {
-        return id;
+    public int getIdAgencia() {
+        return idAgencia;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdAgencia(int id) {
+        this.idAgencia = id;
     }
 
     public String getNombre_punto() {

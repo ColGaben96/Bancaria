@@ -34,6 +34,6 @@ public class TipoContratoImpl implements TipoContratoService {
 
     @Override
     public TipoContratoDTO findTipoContrato(TipoContratoDTO tipocontrato) {
-        return this.tipocontrato.findById(tipocontrato.getId()).orElse(null);
+        return this.tipocontrato.findById(tipocontrato.getIdTipoContrato()).orElse(null);
     }
 }
