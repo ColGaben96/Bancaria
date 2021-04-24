@@ -36,6 +36,14 @@ public class PrestamoDTO implements Serializable {
         this.id = id;
     }
 
+    public int getIdPrestamo() {
+        return idPrestamo;
+    }
+
+    public void setIdPrestamo(int idPrestamo) {
+        this.idPrestamo = idPrestamo;
+    }
+
     public int getNum_prestamo() {
         return num_prestamo;
     }

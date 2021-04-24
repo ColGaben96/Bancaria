@@ -36,6 +36,6 @@ public class TipoTituloAcademicoImpl implements TipoTituloAcademicoService {
 
     @Override
     public TipoTituloAcademicoDTO findTipoTituloAcademico(TipoTituloAcademicoDTO tipotituloacademico) {
-        return this.tipotituloacademico.findById(tipotituloacademico.getIdTipoTitulo()).orElse(null);
+        return this.tipotituloacademico.findById(tipotituloacademico.getIdTipoTiulo()).orElse(null);
     }
 }

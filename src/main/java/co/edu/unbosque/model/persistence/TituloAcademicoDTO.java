@@ -41,6 +41,30 @@ public class TituloAcademicoDTO implements Serializable {
         this.id = id;
     }
 
+    public int getIdTitulo() {
+        return idTitulo;
+    }
+
+    public void setIdTitulo(int idTitulo) {
+        this.idTitulo = idTitulo;
+    }
+
+    public TipoTituloAcademicoDTO getTipo_titulo() {
+        return tipo_titulo;
+    }
+
+    public void setTipo_titulo(TipoTituloAcademicoDTO tipo_titulo) {
+        this.tipo_titulo = tipo_titulo;
+    }
+
+    public EmpleadoDTO getEmpleado_titular() {
+        return empleado_titular;
+    }
+
+    public void setEmpleado_titular(EmpleadoDTO empleado_titular) {
+        this.empleado_titular = empleado_titular;
+    }
+
     public String getNombre_titulo() {
         return nombre_titulo;
     }

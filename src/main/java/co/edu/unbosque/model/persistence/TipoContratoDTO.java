@@ -36,6 +36,14 @@ public class TipoContratoDTO implements Serializable {
         this.id = id;
     }
 
+    public int getIdTipoContrato() {
+        return idTipoContrato;
+    }
+
+    public void setIdTipoContrato(int idTipoContrato) {
+        this.idTipoContrato = idTipoContrato;
+    }
+
     public String getNombre_tipo() {
         return nombre_tipo;
     }

@@ -33,6 +33,14 @@ public class SindicatoDTO implements Serializable {
         this.id = id;
     }
 
+    public int getIdSindicato() {
+        return idSindicato;
+    }
+
+    public void setIdSindicato(int idSindicato) {
+        this.idSindicato = idSindicato;
+    }
+
     public int getNumero_afiliacion() {
         return numero_afiliacion;
     }

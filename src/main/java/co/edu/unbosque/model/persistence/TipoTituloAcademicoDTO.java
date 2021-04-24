@@ -35,6 +35,14 @@ public class TipoTituloAcademicoDTO implements Serializable {
         this.id = id;
     }
 
+    public int getIdTipoTiulo() {
+        return idTipoTiulo;
+    }
+
+    public void setIdTipoTiulo(int idTipoTiulo) {
+        this.idTipoTiulo = idTipoTiulo;
+    }
+
     public String getNombre_tipotitulo() {
         return nombre_tipotitulo;
     }

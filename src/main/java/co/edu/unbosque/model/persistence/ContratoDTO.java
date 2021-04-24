@@ -27,7 +27,7 @@ public class ContratoDTO implements Serializable {
     private double valor_hora_extra;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "idTipoContrato", nullable = false, updatable = false, insertable = false)
-    private TipoContratoDTO tipo_contrato;
+    private TipoContratoDTO tipo_contrato_FK;
 
     public int getId() {
         return id;
@@ -35,6 +35,14 @@ public class ContratoDTO implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdContrato() {
+        return idContrato;
+    }
+
+    public void setIdContrato(int idContrato) {
+        this.idContrato = idContrato;
     }
 
     public String getNombre_puesto() {
@@ -61,12 +69,12 @@ public class ContratoDTO implements Serializable {
         this.valor_hora_extra = valor_hora_extra;
     }
 
-    public TipoContratoDTO getTipo_contrato() {
-        return tipo_contrato;
+    public TipoContratoDTO getTipo_contrato_FK() {
+        return tipo_contrato_FK;
     }
 
-    public void setTipo_contrato(TipoContratoDTO tipo_contrato) {
-        this.tipo_contrato = tipo_contrato;
+    public void setTipo_contrato_FK(TipoContratoDTO tipo_contrato) {
+        this.tipo_contrato_FK = tipo_contrato;
     }
 }
 

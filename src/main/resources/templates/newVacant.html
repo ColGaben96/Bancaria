@@ -20,9 +20,9 @@
         <div class="container">
             <form th:action="@{/saveContract}" th:method="post" th:object="${contrato}">
                 <div class="form-group">
-                    <label for="tipo_contrato_fk">Tipo de Contrato</label>
-                    <select id="tipo_contrato_fk" name="tipo_contrato_fk" type="text" class="form-select">
-                        <option th:each="tipo_contrato: ${tipos_contrato}" th:value="${tipo_contrato.getIdTipoContrato()}" th:text="${tipo_contrato.getNombre_tipo()}"></option>
+                    <label for="tipo_contrato_FK">Tipo de Contrato</label>
+                    <select id="tipo_contrato_FK" name="tipo_contrato_FK" type="text" class="form-select">
+                        <option th:each="tipo_contrato: ${tipos_contrato}" th:value="${tipo_contrato.getId()}" th:text="${tipo_contrato.getNombre_tipo()}"></option>
                     </select>
                 </div>
                 <div class="form-group">

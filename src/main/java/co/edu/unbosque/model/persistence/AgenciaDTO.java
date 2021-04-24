@@ -35,6 +35,14 @@ public class AgenciaDTO implements Serializable {
         this.id = id;
     }
 
+    public int getIdAgencia() {
+        return idAgencia;
+    }
+
+    public void setIdAgencia(int idAgencia) {
+        this.idAgencia = idAgencia;
+    }
+
     public String getNombre_punto() {
         return nombre_punto;
     }

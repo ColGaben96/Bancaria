@@ -47,6 +47,14 @@ public class EmpleadoDTO implements Serializable {
         this.id = id;
     }
 
+    public int getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
+    }
+
     public String getNumID() {
         return numID;
     }
