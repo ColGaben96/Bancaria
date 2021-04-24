@@ -20,6 +20,8 @@ public class SindicatoDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int idSindicato;
     private int numero_afiliacion;
     private double valor_cuota;
 

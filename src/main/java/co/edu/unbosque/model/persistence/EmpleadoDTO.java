@@ -20,6 +20,8 @@ public class EmpleadoDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int idEmpleado;
     private String numID;
     private String nombres;
     private String apellidos;
@@ -28,13 +30,13 @@ public class EmpleadoDTO implements Serializable {
     private String cod_empleado;
     private String contrasena;
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "tipo_contrato_FK", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name = "idContrato", nullable = false, updatable = false, insertable = false)
     private ContratoDTO tipo_contrato;
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "agencia_asignada_FK", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name = "idAgencia", nullable = false, updatable = false, insertable = false)
     private AgenciaDTO agencia_asignada;
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "afiliado_sindicato_FK", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name = "idSindicato", nullable = false, updatable = false, insertable = false)
     private SindicatoDTO afiliado_sindicato;
 
     public int getId() {

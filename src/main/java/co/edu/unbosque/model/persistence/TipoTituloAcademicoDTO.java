@@ -23,6 +23,8 @@ public class TipoTituloAcademicoDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int idTipoTiulo;
     private String nombre_tipotitulo;
 
     public int getId() {

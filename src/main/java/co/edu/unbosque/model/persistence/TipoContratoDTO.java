@@ -24,6 +24,8 @@ public class TipoContratoDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int idTipoContrato;
     private String nombre_tipo;
 
     public int getId() {

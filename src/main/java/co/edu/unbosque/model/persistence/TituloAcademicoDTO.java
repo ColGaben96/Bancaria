@@ -22,13 +22,15 @@ public class TituloAcademicoDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int idTitulo;
     private String nombre_titulo;
     private Date fecha_expedicion;
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "tipo_titulo_FK", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name = "idTipoTitulo", nullable = false, updatable = false, insertable = false)
     private TipoTituloAcademicoDTO tipo_titulo;
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "empleado_titular_FK", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name = "idEmpleado", nullable = false, updatable = false, insertable = false)
     private EmpleadoDTO empleado_titular;
 
     public int getId() {

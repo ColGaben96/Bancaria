@@ -20,11 +20,13 @@ public class ContratoDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int idContrato;
     private String nombre_puesto;
     private double sueldo;
     private double valor_hora_extra;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "tipo_contrato_FK", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name = "idTipoContrato", nullable = false, updatable = false, insertable = false)
     private TipoContratoDTO tipo_contrato;
 
     public int getId() {

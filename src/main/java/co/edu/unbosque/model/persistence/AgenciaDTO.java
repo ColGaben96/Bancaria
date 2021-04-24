@@ -22,6 +22,8 @@ public class AgenciaDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int idAgencia;
     private String nombre_punto;
     private String direccion;
 

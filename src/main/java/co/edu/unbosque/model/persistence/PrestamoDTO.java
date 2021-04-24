@@ -20,10 +20,12 @@ public class PrestamoDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int idPrestamo;
     private int num_prestamo;
     private double valor;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "empleado_responsable_FK", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name = "idEmpleado", nullable = false, updatable = false, insertable = false)
     private EmpleadoDTO empleado_responsable;
 
     public int getId() {
