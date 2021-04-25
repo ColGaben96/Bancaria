@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Bancaria</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <script src="js/bootstrap.css"></script>
+  <script src="https://kit.fontawesome.com/302a1eb3e6.js" crossorigin="anonymous"></script>
+</head>
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bancaria</a>
+    </div>
+  </nav>
+</header>
+<body>
+  <div class="container">
+    <h1 style="text-align: center" th:text="${errorCode}">error</h1>
+    <p th:text="${errorStack}">Info Devs: </p>
+  </div>
+</body>
+</html>
